@@ -109,7 +109,7 @@ Filename
 
 ### PowerShell Commands
 
-I will ocastionally show some commands to run. They are intended to be run from the root project directory. I have not at all been careful about my toolchain, and you might not be able to run these commands because you are missing things I have installed on my machine. I should probably create a docker container for the toolchain and then we could all be consistent, but that isn't going to happen.
+I will occasionally show some commands to run. They are intended to be run from the root project directory. I have not at all been careful about my toolchain, and you might not be able to run these commands because you are missing things I have installed on my machine. I should probably create a docker container for the toolchain and then we could all be consistent, but that isn't going to happen.
 
 {: .filename }
 Powershell
