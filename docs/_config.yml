@@ -1,6 +1,6 @@
 title: Bird Watcher Tutorial
 description: A simple game to learn to develop for the P3.
-theme: just-the-docs
+remote_theme: just-the-docs
 favicon_ico: "/assets/images/favicon.png"
 logo: "/assets/images/Icon.png"
 
