@@ -1,0 +1,32 @@
+{%- assign prev_nav_order = page.nav_order | minus: 1 -%}
+{%- assign next_nav_order = page.nav_order | plus: 1 -%}
+{%- assign pages = site.html_pages -%}
+
+{%- assign prev_page = pages
+    | where_exp: "item", "item.nav_order == prev_nav_order" | first -%}
+{%- assign next_page = pages
+    | where_exp: "item", "item.nav_order == next_nav_order" | first -%}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+    <nav class="footer__nav" align="center">
+        {%- if prev_page -%}
+        <a href="{{ prev_page.url | relative_url}}" class="footer__link btn footer__btn">
+            <div><i class="fa fa-arrow-left footer__text"></i></div>
+            <div class = "footer__title">
+                <span class="footer__direction left footer__text">Previous:</span>
+                <div class="footer__pagetitle left footer__text">{{prev_page.title}}</div>
+            </div>
+        </a>
+        {%- endif -%}
+        {%- if next_page -%}
+        <a href="{{ next_page.url | relative_url }}" class="footer__link btn footer__btn footer__link-next">
+            <div class = "footer__title">
+                <span class="footer__direction right footer__text">Next:</span>
+                <div class="footer__pagetitle right footer__text">{{next_page.title}}</div>
+            </div>
+            <div><i class="fa fa-arrow-right footer__text"></i></div>
+        </a>
+    </nav>
+    {%- endif -%}
+</div>
