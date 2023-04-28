@@ -1,7 +1,7 @@
 ---
 title: Adding Polish to the UX
 layout: default
-nav_order: 11
+nav_order: 12
 ---
 
 # Adding Polish to the UX
