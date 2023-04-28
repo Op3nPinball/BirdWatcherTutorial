@@ -17,7 +17,7 @@ Assets/Scripts/Modes/Mechs/BWTBallLauncher
 
 ```csharp
         private static List<string> _destNames = new List<string>();
-		private static int LaunchIndex;
+        private static int LaunchIndex;
         public const string VUK_LEFT = "LeftInlane";
         public const string VUK_RIGHT = "RightInlane";
 ```
@@ -28,10 +28,10 @@ Then we add the following implementations.
 Assets/Scripts/Modes/Mechs/BWTBallLauncher
 
 ```csharp
-		public static void Initialize (Multimorphic.P3.P3Controller p3, DataManager Data)
-		{
-			data = Data;
-			BallLauncher.AssignP3(p3);
+        public static void Initialize (Multimorphic.P3.P3Controller p3, DataManager Data)
+        {
+            data = Data;
+            BallLauncher.AssignP3(p3);
             var dict = new SortedDictionary<LaunchDestination, List<TroughLauncher>>();
 
             foreach (LaunchDestination dest in Enum.GetValues(typeof(LaunchDestination)))
@@ -68,7 +68,7 @@ Assets/Scripts/Modes/Mechs/BWTBallLauncher
                     BallLauncher.AssignTroughLauncher(backup.Value, destName);
                 }
             }
-		}
+        }
 ```
 
 We also add the following new method.
@@ -91,17 +91,17 @@ Modify the two launch methods that don't specify the launch string.
 Assets/Scripts/Modes/Mechs/BWTBallLauncher
 
 ```csharp
-		public static void launch()
-		{
+        public static void launch()
+        {
             int currentLaunchIndex = GetNextIndex();
             launch(_destNames[currentLaunchIndex]);
-		}
+        }
 
         public static void launch(Multimorphic.P3.VoidDelegateNoArgs callback)
-		{
-			int currentLaunchIndex = GetNextIndex();
-			launch(_destNames[currentLaunchIndex], callback);
-		}
+        {
+            int currentLaunchIndex = GetNextIndex();
+            launch(_destNames[currentLaunchIndex], callback);
+        }
 ```
 
 We will also delete methods ``getVUK``, ``getAlternateVUK`` and variables ``useLeftVUK``, ``useRightVUK``
