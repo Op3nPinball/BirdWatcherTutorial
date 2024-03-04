@@ -36,5 +36,16 @@ Assets/Scripts/Modes/GameModes/BirdRampMode.cs
         }
 ```
 
+Register the `EventHandler` in the constructor.
+
+{: .filename }
+Assets/Scripts/Modes/GameModes/BirdRampMode.cs
+
+```csharp
+            // Gammagoat.BWT.Modes.BirdRampMode.BirdRampMode
+
+            AddModeEventHandler(BWTEventNames.MainTimerExpired, MainTimerExpiredEventHandler, Priority);
+```
+
 {: .note }
 There is a minor exploit as we have implemented it now, which is that birds spawn before launch. I kind of like that it shows what is going to happen before you launch. But it allows you to wait until it spawns to launch, but probably not fast enough to actually help.
