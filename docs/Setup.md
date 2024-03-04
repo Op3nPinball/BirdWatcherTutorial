@@ -68,6 +68,7 @@ And we will add the following
 ```
 /Artifacts/
 /Documentation/
+/Packages/
 
 RecentCertificateData.json
 *.cert
